@@ -1,0 +1,271 @@
+/* ! Définition des polices personnalisées --------------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'BallparkWeiner';
+  src: url('polices/ballpark.eot');
+  src: url('polices/ballpark.eot?#iefix') format('embedded-opentype'),
+    url('polices/ballpark.woff') format('woff'),
+    url('polices/ballpark.ttf') format('truetype'),
+    url('polices/ballpark.svg#BallparkWeiner') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dayrom';
+  src: url('polices/dayrom.eot');
+  src: url('polices/dayrom.eot?#iefix') format('embedded-opentype'),
+    url('polices/dayrom.woff') format('woff'),
+    url('polices/dayrom.ttf') format('truetype'),
+    url('polices/dayrom.svg#Dayrom') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ! Eléments principaux de la page ---------------------------------------------------------------------------*/
+
+body {
+  background: url('images/fond_jaune.png');
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  color: #181818;
+}
+
+#bloc_page {
+  width: 900px;
+  margin: auto;
+}
+
+section h1,
+footer h1,
+nav a {
+  font-family: Dayrom, serif;
+  font-weight: normal;
+  text-transform: uppercase; /*on pourrait faire des Maj. dans html*/
+}
+
+/* ! Header ----------------------------------------------------------------------------------------------------*/
+
+header {
+  background: url('images/separateur.png') repeat-x bottom; /*https://codepen.io/azyme/pen/VPQRbr*/
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#titre_principal {
+  display: flex;
+  flex-direction: column; /* flex en colonne*/
+}
+
+#logo {
+  display: flex;
+  flex-direction: row; /* flex en ligne*/
+  align-items: baseline; /*aligné sur axe principal, ici horizontal*/
+}
+
+#logo img {
+  width: 59px;
+  height: 60px;
+}
+
+header h1 {
+  font-family: 'BallparkWeiner', serif; /*police spéciale @font-face*/
+  font-size: 2.5em;
+  font-weight: normal;
+  margin: 0 0 0 10px;
+}
+
+header h2 {
+  font-family: Dayrom, serif; /*police spéciale @font-face*/
+  font-size: 1.1em;
+  margin-top: 0px;
+  font-weight: normal;
+}
+
+/* ! Navigation ---------------------------------------------------------------------------------------------------*/
+
+nav ul {
+  list-style-type: none; /* efface les points des puces*/
+  display: flex;
+}
+
+nav li {
+  margin-right: 15px;
+}
+
+nav a {
+  font-size: 1.3em;
+  color: #181818;
+  padding-bottom: 3px;
+  text-decoration: none; /*enlève le soulignement des liens url*/
+}
+
+nav a:hover {
+  color: #760001;
+  border-bottom: 3px solid #760001; /*apparition soulignement avec hover*/
+}
+
+/* ! Bannière ------------------------------------------------------------------------------------------------------*/
+
+#banniere_image {
+  margin-top: 15px;
+  height: 200px;
+  border-radius: 5px;
+  background: url('images/sanfrancisco.jpg') no-repeat;
+  position: relative; /*aucun effet*/
+  box-shadow: 0px 4px 4px #1c1a19; /*ombre*/
+  margin-bottom: 25px;
+}
+
+#banniere_description {
+  position: absolute; /*fixe la banière en bas*/
+  bottom: 0;
+  border-radius: 0px 0px 5px 5px; /* angles arrondis*/
+  width: 99.5%; /*bricolage pour pas dépasser l'image...*/
+  height: 33px;
+  padding-top: 15px;
+  padding-left: 4px;
+  background-color: rgba(24, 24, 24, 0.8);
+  color: white;
+  font-size: 0.8em;
+}
+
+.bouton_rouge {
+  height: 25px;
+  position: absolute; /*fixe le bouton en bas à droite*/
+  right: 5px; /*... */
+  bottom: 5px; /*...*/
+  background: url('images/fond_degraderouge.png') repeat-x;
+  border: 1px solid #760001;
+  border-radius: 5px; /* angles arrondis*/
+  font-size: 1.2em; /* police un peu + grande (>1)*/
+  text-align: center;
+  padding: 3px 8px 0px 8px; /* top | right | bottom | left */
+  color: white; /*police en blanc*/
+  text-decoration: none; /*enlève le soulignement*/
+}
+
+.bouton_rouge img {
+  border: 0; /*...?...*/
+}
+
+/* ! Corps ---------------------------------------------------------------------------------------------------------*/
+
+section {
+  /*Container*/
+  display: flex; /*Pour ajuster la largeur des 2 blocs*/
+  margin-bottom: 20px;
+}
+
+article, /*items*/
+aside {
+  text-align: justify;
+}
+
+article {
+  margin-right: 20px;
+  flex: 3; /*Bloc 3 fois + grand*/
+}
+
+.ico_categorie {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+article p {
+  font-size: 0.8em;
+}
+
+aside {
+  flex: 1.2; /*Proportion environ 3 fois + petite que article*/
+  position: relative;
+  background-color: #706b64;
+  box-shadow: 0px 2px 5px #1c1a19; /*ombre*/
+  border-radius: 5px;
+  padding: 10px; /*marge intérieures*/
+  color: white;
+  font-size: 0.9em;
+}
+
+#fleche_bulle {
+  position: absolute;
+  top: 100px;
+  left: -12px;
+}
+
+#photo_zozor {
+  text-align: center;
+}
+
+#photo_zozor img {
+  border: 1px solid #181818;
+}
+
+aside img {
+  margin-right: 5px;
+}
+
+aside h1 {
+  text-align: center; /*Ajout perso*/
+}
+
+#javeuch {
+  display: flex; /*Ajout perso*/
+  justify-content: space-between; /*Ajout perso*/
+}
+
+/* ! Footer ------------------------------------------------------------------------------------------------------*/
+
+footer {
+  /*Container*/
+  display: flex;
+  background: url('images/ico_top.png') no-repeat top center,
+    url('images/separateur.png') repeat-x top,
+    url('images/ombre.png') repeat-x top; /*non visible*/
+  padding-top: 25px;
+}
+
+footer p,
+footer ul {
+  font-size: 0.8em; /*on réduit un peu la taille de police*/
+}
+
+footer h1 {
+  font-size: 1.1em;
+}
+
+#tweet {
+  /*div de gauche, item1*/
+  width: 28%;
+}
+
+#mes_photos {
+  /*div centrale, item2*/
+  width: 35%;
+}
+
+#mes_amis {
+  /*div de droite, item3*/
+  width: 31%;
+}
+
+#mes_photos img {
+  border: 1px solid #181818;
+  margin-right: 2px;
+}
+
+#listes_amis {
+  display: flex;
+  justify-content: space-between; /* flex avec espacement des items*/
+  margin-top: 0;
+}
+
+#mes_amis ul {
+  list-style-image: url('images/ico_liensexterne.png'); /*Personnalisation des puces*/
+  padding-left: 2px;
+}
+
+#mes_amis a {
+  text-decoration: none; /*Enlève le souslignement des url*/
+  color: #760001;
+}
